@@ -37,7 +37,23 @@ Array.prototype.getRandom = function () {
 };
 
 function pairs(names) {
-  // Your code goes here
+  let pushing = [];
+  let random = [];
+  let evenPairs = [];
+  if (!names) {
+    return [];
+  } else if (names.length !== 0) {
+    while (names.length > 0) {
+      pushing = names.getRandom();
+      random.push(pushing);
+    }
+
+    while (random.length > 0) {
+      evenPairs.push(random.splice(0, 2));
+    }
+
+    return evenPairs;
+  } else return [];
 }
 
 module.exports = pairs;
